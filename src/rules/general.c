@@ -33,9 +33,9 @@ int general_seccomp_rules(struct config *_config) {
         return LOAD_SECCOMP_FAILED;
     }
     // add extra rule for execve
-    if (seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(execve), 1, SCMP_A0(SCMP_CMP_NE, (scmp_datum_t)(_config->exe_path))) != 0) {
+    /*if (seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(execve), 1, SCMP_A0(SCMP_CMP_NE, (scmp_datum_t)(_config->exe_path))) != 0) {
         return LOAD_SECCOMP_FAILED;
-    }
+    }*/
     // do not allow "w" and "rw" using open
     if (seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(open), 1, SCMP_CMP(1, SCMP_CMP_MASKED_EQ, O_WRONLY, O_WRONLY)) != 0) {
         return LOAD_SECCOMP_FAILED;
