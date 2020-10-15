@@ -11,4 +11,4 @@ Judger for OnlineJudge
 [OnlineJudge](https://github.com/QingdaoU/OnlineJudge)
 
 # 适配32位系统
-忽略编译时警告，跳过execve的文件名检查（很危险，权宜之计）
+把SCMP调用改为了32位版本
