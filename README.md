@@ -11,4 +11,4 @@ Judger for OnlineJudge
 [OnlineJudge](https://github.com/QingdaoU/OnlineJudge)
 
 # 适配32位系统
-把SCMP调用改为了32位版本
+把SCMP调用改为了32位版本, 把c_cpp策略的系统调用白名单换成了32位版本的
